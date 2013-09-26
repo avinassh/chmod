@@ -1,5 +1,6 @@
 function check()
   {
+  	un_set();
   	var value=0;
 	if (document.getElementById("uread").checked == true)
 		{
