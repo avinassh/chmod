@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript" src="chmod.js"></script>
+</head>
+<body>
+
+<form>
+<p>User:</p>
+<p>Read</p><input onchange="check()" type="checkbox" id="uread">
+<p>Write</p><input onchange="check()" type="checkbox" id="uwrite">
+<p>Execute</p><input onchange="check()" type="checkbox" id="uexec">
+</form>
+<p id='user1'>0</p>
+<p id='st'>-</p><p id='ur'>-</p><p id='uw'>-</p><p id='ue'>-</p>
+<hr >
+<input type="text" id="user" maxlength="1" onchange="check2()">
+<input type="text" name="uw" maxlength="1" >
+<input type="text" name="ue" maxlength="1" >
+<hr>
+<input type="text" id="userw" maxlength="1" onchange="check3()">
+</body>
+</html>
