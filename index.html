@@ -8,13 +8,14 @@ alert(document.getElementById("myTable").rows);
 }
 </script>
 <style type="text/css">
-	table{
+	.tables table{
 		display: inline;
 	}
 </style>
 </head>
 <body>
 
+<div class="tables">
 <p>user table</p>
 <table id="userTable">
   <tr>
@@ -23,52 +24,52 @@ alert(document.getElementById("myTable").rows);
     <td>-</td>
   </tr>
 </table>
+<table id="groupTable">
+  <tr>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+<table id="otherTable">
+  <tr>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+</div>
 <br>
 <p>chmod table</p>
 <table id="chmodTable">
   <tr>
-    <td><input type="text" id="user" maxlength="1" onchange="check2('userTable')"></td>
-    <td><input type="text" id="user" maxlength="1" onchange="check2('groupTable')"></td>
-    <td><input type="text" id="user" maxlength="1" onchange="check2('otherTable')"></td>
+    <td><input type="text" maxlength="1" id='userTableChmod' onchange="setChmodBits('userTable')"></td>
+    <td><input type="text" maxlength="1" id='groupTableChmod' onchange="setChmodBits('groupTable')"></td>
+    <td><input type="text" maxlength="1" id='otherTableChmod' onchange="setChmodBits('otherTable')"></td>
   </tr>
 </table>
 <hr/>
-<p>user selectbox</p>
 <table id="userBox">
   <tr>
-    <td><p>Read<input onchange="check()" type="checkbox"></p></td>
-    <td><p>Write<input onchange="check()" type="checkbox"></p></td>
-    <td><p>Execute<input onchange="check()" type="checkbox"></p></td>
+    <td><p>User Permissions: Read<input onchange="check('userTable','userBox')" type="checkbox"></p></td>
+    <td><p>Write<input onchange="check('userTable','userBox')" type="checkbox"></p></td>
+    <td><p>Execute<input onchange="check('userTable','userBox')" type="checkbox"></p></td>
   </tr>
 </table>
-
-<p id='user1'>0</p>
-<p id='st'>-</p><p id='ur'>-</p><p id='uw'>-</p><p id='ue'>-</p>
-<hr >
-<input type="text" id="user" maxlength="1" onchange="check2()">
-<input type="text" name="uw" maxlength="1" >
-<input type="text" name="ue" maxlength="1" >
-<hr>
-<form>
-<p>Group:</p>
-<p>Read<input onchange="check()" type="checkbox" id="uread"></p>
-<p>Write<input onchange="check()" type="checkbox" id="uwrite"></p>
-<p>Execute<input onchange="check()" type="checkbox" id="uexec"></p>
-</form>
-<hr>
-<table id="groupTable" border="1">
+<table id="groupBox">
   <tr>
-    <td>cell 1</td>
-    <td>cell 2</td>
-    <td>cell 3</td>
+    <td><p>Group Permissions: Read<input onchange="check('groupTable','groupBox')" type="checkbox"></p></td>
+    <td><p>Write<input onchange="check('groupTable','groupBox')" type="checkbox"></p></td>
+    <td><p>Execute<input onchange="check('groupTable','groupBox')" type="checkbox"></p></td>
   </tr>
 </table>
-<table id="otherTable" border="1">
+<table id="otherBox">
   <tr>
-    <td>cell 1</td>
-    <td>cell 2</td>
-    <td>cell 3</td>
+    <td><p>Others Permissions: Read<input onchange="check('otherTable','otherBox')" type="checkbox"></p></td>
+    <td><p>Write<input onchange="check('otherTable','otherBox')" type="checkbox"></p></td>
+    <td><p>Execute<input onchange="check('otherTable','otherBox')" type="checkbox"></p></td>
   </tr>
 </table>
+<hr>
 </body>
 </html>

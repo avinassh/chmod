@@ -1,9 +1,9 @@
-function check()
+function check(tableNameId,boxId)
   {
-  	un_set('userTable');
+  	un_set(tableNameId);
   	var value=0;
-  	tableData = document.getElementById('userTable').getElementsByTagName('td');
-  	checkBox = document.getElementById('userBox').getElementsByTagName('input');
+  	tableData = document.getElementById(tableNameId).getElementsByTagName('td');
+  	checkBox = document.getElementById(boxId).getElementsByTagName('input');
 	if (checkBox[0].checked == true)
 		{
 			value+=4;
@@ -19,62 +19,58 @@ function check()
 			value+=1;
 			tableData[2].innerHTML='x';
 		}
-	document.getElementById('chmodTable').getElementsByTagName('td')[0].getElementsByTagName('input')[0].value=value;
+	document.getElementById(tableNameId+'Chmod').value=value;	
  }
 
 
-function set_ur(tableName){
-	document.getElementById(tableName).getElementsByTagName('td')[0].innerHTML='r';
+function setReadBit(tableNameId){
+	document.getElementById(tableNameId).getElementsByTagName('td')[0].innerHTML='r';
 }
 
-function set_uw(tableName){
-	document.getElementById(tableName).getElementsByTagName('td')[1].innerHTML='w';
+function setWriteBit(tableNameId){
+	document.getElementById(tableNameId).getElementsByTagName('td')[1].innerHTML='w';
 }
 
-function set_ue(tableName){
-	document.getElementById(tableName).getElementsByTagName('td')[2].innerHTML='x';
+function setExecBit(tableNameId){
+	document.getElementById(tableNameId).getElementsByTagName('td')[2].innerHTML='x';
 }
 
-function un_set(tableName){
-	var tableData = document.getElementById(tableName).getElementsByTagName('td');
+function un_set(tableNameId){
+	var tableData = document.getElementById(tableNameId).getElementsByTagName('td');
 	for (var i = tableData.length - 1; i >= 0; i--) {
 		tableData[i].innerHTML='-';
 	};
 }
 
-function check2 (tableName) {
- 	var user_val = document.getElementById('chmodTable').getElementsByTagName('td')[0].getElementsByTagName('input')[0].value;//document.getElementById('user').value;
- 	un_set(tableName);
- 	if (user_val==1)
+function setChmodBits (tableNameId) {
+ 	var chmodValue = document.getElementById(tableNameId+'Chmod').value;
+ 	un_set(tableNameId);
+ 	if (chmodValue==1)
  		{
- 			set_ue(tableName);
+ 			setExecBit(tableNameId);
  		}
- 	if (user_val==2)
+ 	if (chmodValue==2)
  		{
- 			set_uw(tableName);
+ 			setWriteBit(tableNameId);
  		}
- 	if (user_val==3)
+ 	if (chmodValue==3)
  		{ 
- 			set_uw(tableName); set_ue(tableName);
+ 			setWriteBit(tableNameId); setExecBit(tableNameId);
  		}
- 	if (user_val==4)
+ 	if (chmodValue==4)
  		{
- 			set_ur(tableName);
+ 			setReadBit(tableNameId);
  		}
- 	if (user_val==5)
+ 	if (chmodValue==5)
  		{
- 			set_ur(tableName); set_ue(tableName);
+ 			setReadBit(tableNameId); setExecBit(tableNameId);
  		}
- 	if (user_val==6)
+ 	if (chmodValue==6)
  		{
- 			set_ur(tableName);set_uw(tableName);
+ 			setReadBit(tableNameId);setWriteBit(tableNameId);
  		}
- 	if (user_val==7)
+ 	if (chmodValue==7)
  		{
- 			set_ur(tableName);set_uw(tableName);set_ue(tableName);
+ 			setReadBit(tableNameId);setWriteBit(tableNameId);setExecBit(tableNameId);
  		}
- }
-
- function check3() {
- 	alert(document.getElementById('userw').value);
  }
