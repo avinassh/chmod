@@ -3,17 +3,18 @@ function check()
   	un_set('userTable');
   	var value=0;
   	tableData = document.getElementById('userTable').getElementsByTagName('td');
-	if (document.getElementById("uread").checked == true)
+  	checkBox = document.getElementById('userBox').getElementsByTagName('input');
+	if (checkBox[0].checked == true)
 		{
 			value+=4;
 			tableData[0].innerHTML='r';
 		}	
-	if (document.getElementById("uwrite").checked == true)
+	if (checkBox[1].checked == true)
 		{
 			value+=2;
 			tableData[1].innerHTML='w';
 		}
-	if (document.getElementById("uexec").checked == true)
+	if (checkBox[2].checked == true)
 		{
 			value+=1;
 			tableData[2].innerHTML='x';

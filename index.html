@@ -33,13 +33,15 @@ alert(document.getElementById("myTable").rows);
   </tr>
 </table>
 <hr/>
+<p>user selectbox</p>
+<table id="userBox">
+  <tr>
+    <td><p>Read<input onchange="check()" type="checkbox"></p></td>
+    <td><p>Write<input onchange="check()" type="checkbox"></p></td>
+    <td><p>Execute<input onchange="check()" type="checkbox"></p></td>
+  </tr>
+</table>
 
-<form>
-<p>User:</p>
-<p>Read<input onchange="check()" type="checkbox" id="uread"></p>
-<p>Write<input onchange="check()" type="checkbox" id="uwrite"></p>
-<p>Execute<input onchange="check()" type="checkbox" id="uexec"></p>
-</form>
 <p id='user1'>0</p>
 <p id='st'>-</p><p id='ur'>-</p><p id='uw'>-</p><p id='ue'>-</p>
 <hr >
