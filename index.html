@@ -15,16 +15,24 @@ alert(document.getElementById("myTable").rows);
 </head>
 <body>
 
-<table id="userTable" border="1">
+<p>user table</p>
+<table id="userTable">
   <tr>
-    <td>cell 1</td>
-    <td>cell 2</td>
-    <td>cell 3</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 </table>
-
 <br>
-<button type="button" onclick="displayResult()">Show number of rows in table</button>
+<p>chmod table</p>
+<table id="chmodTable">
+  <tr>
+    <td><input type="text" id="user" maxlength="1" onchange="check2('userTable')"></td>
+    <td><input type="text" id="user" maxlength="1" onchange="check2('groupTable')"></td>
+    <td><input type="text" id="user" maxlength="1" onchange="check2('otherTable')"></td>
+  </tr>
+</table>
+<hr/>
 
 <form>
 <p>User:</p>
