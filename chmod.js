@@ -2,20 +2,24 @@ function check()
   {
   	un_set();
   	var value=0;
+  	tableData = document.getElementById('userTable').getElementsByTagName('td');
 	if (document.getElementById("uread").checked == true)
 		{
 			value+=4;
-			document.getElementById('ur').innerHTML='r'
+			//document.getElementById('ur').innerHTML='r'
+			tableData[0].innerHTML='r';
 		}	
 	if (document.getElementById("uwrite").checked == true)
 		{
 			value+=2;
-			document.getElementById('uw').innerHTML='w'
+			//document.getElementById('uw').innerHTML='w';
+			tableData[1].innerHTML='w';
 		}
 	if (document.getElementById("uexec").checked == true)
 		{
 			value+=1;
-			document.getElementById('ue').innerHTML='x'
+			//document.getElementById('ue').innerHTML='x'
+			tableData[2].innerHTML='x';
 		}
 	document.getElementById('user').value=value;
  }
@@ -33,36 +37,38 @@ function set_ur(){
 }
 
 function un_set(){
-	document.getElementById('ue').innerHTML='-';
-	document.getElementById('uw').innerHTML='-';
-	document.getElementById('ur').innerHTML='-';
+	tableData = document.getElementById('userTable').getElementsByTagName('td');
+	//document.getElementById('ue').innerHTML='-';
+	//document.getElementById('uw').innerHTML='-';
+	//document.getElementById('ur').innerHTML='-';
 }
 
 function check2 () {
  	user_val = document.getElementById('user').value;
+ 	un_set();
  	if (user_val==1)
  		{
- 			un_set();set_ue();
+ 			set_ue();
  		}
  	if (user_val==2)
  		{
- 			un_set();set_uw();
+ 			set_uw();
  		}
  	if (user_val==3)
  		{ 
- 			un_set();set_uw(); set_ue();
+ 			set_uw(); set_ue();
  		}
  	if (user_val==4)
  		{
- 			un_set();set_ur();
+ 			set_ur();
  		}
  	if (user_val==5)
  		{
- 			un_set();set_ur(); set_ue();
+ 			set_ur(); set_ue();
  		}
  	if (user_val==6)
  		{
- 			un_set();set_ur();set_uw();
+ 			set_ur();set_uw();
  		}
  	if (user_val==7)
  		{

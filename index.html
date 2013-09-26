@@ -7,19 +7,22 @@
 alert(document.getElementById("myTable").rows);
 }
 </script>
+<style type="text/css">
+	table{
+		display: inline;
+	}
+</style>
 </head>
 <body>
 
-<table id="myTable" border="1">
+<table id="userTable" border="1">
   <tr>
     <td>cell 1</td>
     <td>cell 2</td>
-  </tr>
-  <tr>
     <td>cell 3</td>
-    <td>cell 4</td>
   </tr>
 </table>
+
 <br>
 <button type="button" onclick="displayResult()">Show number of rows in table</button>
 
@@ -42,5 +45,20 @@ alert(document.getElementById("myTable").rows);
 <p>Write<input onchange="check()" type="checkbox" id="uwrite"></p>
 <p>Execute<input onchange="check()" type="checkbox" id="uexec"></p>
 </form>
+<hr>
+<table id="groupTable" border="1">
+  <tr>
+    <td>cell 1</td>
+    <td>cell 2</td>
+    <td>cell 3</td>
+  </tr>
+</table>
+<table id="otherTable" border="1">
+  <tr>
+    <td>cell 1</td>
+    <td>cell 2</td>
+    <td>cell 3</td>
+  </tr>
+</table>
 </body>
 </html>
